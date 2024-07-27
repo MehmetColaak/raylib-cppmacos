@@ -14,7 +14,7 @@ int main()
         BeginDrawing();
 
         ClearBackground(BLACK);
-        DrawText("Ezgi Seni Seviyorum <3 <3 <3", 130, 300, 40, LIGHTGRAY);
+        DrawText("TEST TEST TEST TEST", 130, 300, 40, LIGHTGRAY);
 
         EndDrawing();
     }
