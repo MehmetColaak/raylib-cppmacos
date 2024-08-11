@@ -11,21 +11,17 @@ int main()
 
     SetTargetFPS(60);
 
-    int freq = 220;
-
     while (!WindowShouldClose())
     {
         BeginDrawing();
 
         ClearBackground(BLACK);
 
-        for(int x = 0; x < screenWidth; ++x)
+        for(float angle = 0; angle < 2 * PI; angle += 0.1)
         {
-            int y = screenHeight / 2 + (100 * sin(freq * x));
+            int x = screenWidth / 2 + (100 * cos(angle));
+            int y = screenHeight / 2 + (100 * sin(angle));
             DrawPixel(x, y, WHITE);
-
-            int y2 = screenHeight / 2 + (100 * sin((freq * 2) * x));
-            DrawPixel(x, y2, RED);
         }
 
         EndDrawing();
