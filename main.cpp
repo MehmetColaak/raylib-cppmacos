@@ -1,4 +1,6 @@
 #include "raylib.h"
+#include <iostream>
+#include <cmath>
 
 int main()
 {
@@ -9,12 +11,22 @@ int main()
 
     SetTargetFPS(60);
 
+    int freq = 220;
+
     while (!WindowShouldClose())
     {
         BeginDrawing();
 
         ClearBackground(BLACK);
-        DrawText("TEST TEST TEST TEST", 130, 300, 40, LIGHTGRAY);
+
+        for(int x = 0; x < screenWidth; ++x)
+        {
+            int y = screenHeight / 2 + (100 * sin(freq * x));
+            DrawPixel(x, y, WHITE);
+
+            int y2 = screenHeight / 2 + (100 * sin((freq * 2) * x));
+            DrawPixel(x, y2, RED);
+        }
 
         EndDrawing();
     }
